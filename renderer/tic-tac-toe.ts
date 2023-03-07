@@ -81,18 +81,9 @@ class TicTacToe {
 
         this.initBoard(board);
 
-
-        let controlsContainer = gameContainer.querySelector(".game-controls");
-        if (controlsContainer !== null) {
-            this.initRestart(controlsContainer);
-        }
-
-
-
         this.winnerAlertTemplate = winnerAlertTemplate;
         this.initWinnerAlertTemplate();
         
-
         this.strategy = new PlayingGame(this.winnerAlertTemplate);
 
     }
@@ -130,13 +121,6 @@ class TicTacToe {
 
     initStrategy(strategy: GameStrategy) {
         this.strategy = strategy;
-    }
-
-    initRestart(controlsContainer: Element) {
-        let restart = controlsContainer.querySelector<HTMLElement>(".restart");
-        if (restart !== null) {
-            restart.onclick = () =>  this.reset()
-        }
     }
 
     clearBoard() {
